@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'movies_list.dart';
+import 'homepage.dart';
 
 void main() => runApp(MovieScraper());
 
@@ -9,11 +9,12 @@ class MovieScraper extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Movie Scraper',
       theme: ThemeData(
         primarySwatch: Colors.red,
       ),
-      home: MoviesList(),
+      home: HomePage(),
     );
   }
 }

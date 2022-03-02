@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'genre.dart';
-import 'movie.dart';
 import 'movie_details.dart';
 import 'http_functions.dart';
+import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 
 class MoviesByGenre extends StatefulWidget {
   MoviesByGenre(
@@ -67,33 +67,42 @@ class _MoviesByGenreState extends State<MoviesByGenre> {
                 } else {
                   poster = NetworkImage(defaultPosterPath);
                 }
-                return Container(
-                  padding: const EdgeInsets.only(
-                    left: 8.0,
-                  ),
-                  width: MediaQuery.of(context).size.width / 3.7,
-                  child: GestureDetector(
-                    child: Card(
-                      color: Colors.transparent,
-                      child: ClipRRect(
-                        clipBehavior: Clip.hardEdge,
-                        borderRadius: BorderRadius.circular(10),
-                        child: SizedBox.fromSize(
-                          size: Size.fromHeight(144.0),
-                          child: Image(
-                            image: poster,
-                            fit: BoxFit.cover,
-                            filterQuality: FilterQuality.high,
+                return AnimationConfiguration.staggeredList(
+                  position: position,
+                  duration: const Duration(milliseconds: 500),
+                  child: SlideAnimation(
+                    horizontalOffset: 100,
+                    child: FadeInAnimation(
+                      child: Container(
+                        padding: const EdgeInsets.only(
+                          left: 8.0,
+                        ),
+                        width: MediaQuery.of(context).size.width / 3.7,
+                        child: GestureDetector(
+                          child: Card(
+                            color: Colors.transparent,
+                            child: ClipRRect(
+                              clipBehavior: Clip.hardEdge,
+                              borderRadius: BorderRadius.circular(10),
+                              child: SizedBox.fromSize(
+                                size: Size.fromHeight(144.0),
+                                child: Image(
+                                  image: poster,
+                                  fit: BoxFit.cover,
+                                  filterQuality: FilterQuality.high,
+                                ),
+                              ),
+                            ),
                           ),
+                          onTap: () {
+                            MaterialPageRoute route = MaterialPageRoute(
+                              builder: (_) => MovieDetails(movies[position]),
+                            );
+                            Navigator.push(context, route);
+                          },
                         ),
                       ),
                     ),
-                    onTap: () {
-                      MaterialPageRoute route = MaterialPageRoute(
-                        builder: (_) => MovieDetails(movies[position]),
-                      );
-                      Navigator.push(context, route);
-                    },
                   ),
                 );
               }),
