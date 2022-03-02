@@ -15,7 +15,7 @@ class MoviesList extends StatefulWidget {
 }
 
 class _MoviesListState extends State<MoviesList> {
-  // TODO: Fix first load Red-Screen error
+  // TODO: Fix first load Red-Screen
 
   late HttpFunctions httpFunction;
   int? moviesCount;
