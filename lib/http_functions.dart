@@ -4,7 +4,7 @@ import 'package:http/http.dart' as http;
 import 'dart:io';
 import 'dart:convert';
 import 'movie.dart';
-import 'genre.dart';
+import 'Elements/genre.dart';
 
 class HttpFunctions {
   final String apiKey = 'api_key=3ccc6271ad0198d5bce7d48503795b9b';

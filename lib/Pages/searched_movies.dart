@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'http_functions.dart';
+import '../http_functions.dart';
 import 'movie_details.dart';
 
 class SearchedMovies extends StatefulWidget {

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'movie.dart';
-import 'http_functions.dart';
+import '../movie.dart';
+import '../http_functions.dart';
 import 'movie_video.dart';
 
 class TopMovie extends StatelessWidget {

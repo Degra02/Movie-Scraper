@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'movie.dart';
-import 'http_functions.dart';
-import 'movie_details.dart';
+import '../movie.dart';
+import '../http_functions.dart';
+import '../Pages/movie_details.dart';
 import 'movies_by_genre.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 

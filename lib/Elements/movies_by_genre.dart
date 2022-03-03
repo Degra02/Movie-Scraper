@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'genre.dart';
-import 'movie_details.dart';
-import 'http_functions.dart';
+import '../Pages/movie_details.dart';
+import '../http_functions.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 
 class MoviesByGenre extends StatefulWidget {
