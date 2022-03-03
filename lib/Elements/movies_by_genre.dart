@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'genre.dart';
+import '../Elements/genre.dart';
 import '../Pages/movie_details.dart';
 import '../http_functions.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';

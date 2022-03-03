@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:movie_scraper_final/Pages/searched_movies.dart';
 import '../http_functions.dart';
 import '../Elements/top_movie.dart';
-import '../movie.dart';
+import '../Elements/movie.dart';
 import '../Elements/movies_list.dart';
 
 class HomePage extends StatefulWidget {

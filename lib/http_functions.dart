@@ -1,9 +1,7 @@
-import 'dart:math';
-
 import 'package:http/http.dart' as http;
 import 'dart:io';
 import 'dart:convert';
-import 'movie.dart';
+import 'Elements/movie.dart';
 import 'Elements/genre.dart';
 
 class HttpFunctions {

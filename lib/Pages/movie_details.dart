@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../movie.dart';
+import '../Elements/movie.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../Elements/movie_video.dart';
 import '../http_functions.dart';
