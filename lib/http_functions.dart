@@ -3,26 +3,29 @@ import 'dart:io';
 import 'dart:convert';
 import 'Elements/movie.dart';
 import 'Elements/genre.dart';
+import 'api_key.dart' as api;
 
 class HttpFunctions {
-  final String apiKey = 'api_key=3ccc6271ad0198d5bce7d48503795b9b';
+  final String apiKey = api.api_key;
   final String urlBase = 'https://api.themoviedb.org/3/movie';
   final String urlPopular = '/popular?';
   final String urlLanguage = '&language=en-US';
   final String urlSearchBase =
-      'https://api.themoviedb.org/3/search/movie?api_key=3ccc6271ad0198d5bce7d48503795b9b&query=';
-  final String urlGenreBase =
-      'https://api.themoviedb.org/3/discover/movie?api_key=3ccc6271ad0198d5bce7d48503795b9b&with_genres=';
+      'https://api.themoviedb.org/3/search/movie?' + api.api_key + '&query=';
+  final String urlGenreBase = 'https://api.themoviedb.org/3/discover/movie?' +
+      api.api_key +
+      '&with_genres=';
 
-  final String urlGenreList =
-      'https://api.themoviedb.org/3/genre/movie/list?api_key=3ccc6271ad0198d5bce7d48503795b9b&language=en-US';
+  final String urlGenreList = 'https://api.themoviedb.org/3/genre/movie/list?' +
+      api.api_key +
+      '&language=en-US';
 
   final String sortBy = '&sort_by=';
 
   final String urlGetVideo = '/videos?';
 
   Future<List?> getUpcoming() async {
-    final String popular = urlBase + urlPopular + apiKey + urlLanguage;
+    final String popular = urlBase + urlPopular + api.api_key + urlLanguage;
     http.Response result = await http.get(Uri.parse(popular));
 
     if (result.statusCode == HttpStatus.ok) {
@@ -78,7 +81,7 @@ class HttpFunctions {
   }
 
   Future<List?> getNowPlaying() async {
-    final String query = urlBase + '/now_playing?' + apiKey;
+    final String query = urlBase + '/now_playing?' + api.api_key;
     http.Response result = await http.get(Uri.parse(query));
     if (result.statusCode == HttpStatus.ok) {
       final jsonResponse = json.decode(result.body);
@@ -91,7 +94,8 @@ class HttpFunctions {
   }
 
   Future<String?> getMovieVideo(int id) async {
-    final String query = urlBase + '/' + id.toString() + urlGetVideo + apiKey;
+    final String query =
+        urlBase + '/' + id.toString() + urlGetVideo + api.api_key;
     http.Response result = await http.get(Uri.parse(query));
     if (result.statusCode == HttpStatus.ok) {
       final jsonResponse = json.decode(result.body);
