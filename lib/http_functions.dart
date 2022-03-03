@@ -6,7 +6,6 @@ import 'Elements/genre.dart';
 import 'api_key.dart' as api;
 
 class HttpFunctions {
-  final String apiKey = api.api_key;
   final String urlBase = 'https://api.themoviedb.org/3/movie';
   final String urlPopular = '/popular?';
   final String urlLanguage = '&language=en-US';
